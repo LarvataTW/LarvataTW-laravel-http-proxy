@@ -1,0 +1,55 @@
+{
+    "name": "larvata/laravelhttpproxy",
+    "description": "",
+    "keywords": [
+        "larvata",
+        "laravelhttpproxy"
+    ],
+    "homepage": "https://github.com/larvata/laravelhttpproxy",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "larvata",
+            "email": "info@larvata.tw",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^8.0",
+        "rmccue/requests": "^2.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Larvata\\LaravelHttpProxy\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Larvata\\LaravelHttpProxy\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Larvata\\LaravelHttpProxy\\LaravelHttpProxyServiceProvider"
+            ],
+            "aliases": {
+                "LaravelHttpProxy": "Larvata\\LaravelHttpProxy\\LaravelHttpProxyFacade"
+            }
+        }
+    }
+}
