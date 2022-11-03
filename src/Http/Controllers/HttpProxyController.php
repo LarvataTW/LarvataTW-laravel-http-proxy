@@ -25,8 +25,9 @@ class HttpProxyController extends BaseController
             $proxyPath = preg_replace($k,$v,$proxyPath);
           }
           $fullUrl = Config::get("httpproxy.host")."/".$proxyPath."?".$queryString;
-           $response = Requests::get($fullUrl, $headers);
-           return json_decode($response->body);
+          $response = Requests::get($fullUrl, $headers);
+          return response( $response->body, $response->status_code)
+                          ->header('Content-Type', $response->headers['content-type']);
         }
 }
 
