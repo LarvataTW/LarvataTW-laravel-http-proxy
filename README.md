@@ -7,4 +7,4 @@ proxy request to another api server
 
 1. composer require 
 2. place a route file in routes/httpproxy.php
-3. add environment variable in .env
+3. place a config file in config/httpproxy.php ( see config/httproxy.php.example)

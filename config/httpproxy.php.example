@@ -1,0 +1,13 @@
+<?php
+return[
+  'host'  =>'https://host.com.tw/v1',
+  'prefix'=> 'proxy',
+  'header'=> [
+     'Authorization' => 'ggg',
+   ],
+  'path_replacement'=>[
+   '/^segmement$/' => "seg/",
+   '/^test$/' => "test/"
+   ]
+
+];
